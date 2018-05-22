@@ -1,3 +1,19 @@
 nav a {
     color: #fff
 }
+
+footer p {
+  color: #999;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.form-signin {
+  max-width: 330px;
+  margin: 3rem auto;
+}
+
+.form-signup {
+  max-width: 630px;
+  margin: 3rem auto;
+}
