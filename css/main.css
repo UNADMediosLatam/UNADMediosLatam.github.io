@@ -1,5 +1,8 @@
-nav a {
+header nav a {
     color: #fff
+}
+header nav a:hover {
+  color: #CCC
 }
 
 footer p {
@@ -16,4 +19,17 @@ footer p {
 .form-signup {
   max-width: 630px;
   margin: 3rem auto;
+}
+
+.material-icons {
+  vertical-align: top;
+}
+
+.sidebar a {
+  color: #666;
+}
+
+.sidebar a:hover {
+  background: #EEE;
+  color: #007bff;
 }
