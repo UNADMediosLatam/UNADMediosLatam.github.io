@@ -95,45 +95,45 @@
         </div>
       </nav>
 
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Ventas de la semana</h1>
-        </div>
+      <main id="admin-content" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 
-        <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+        <h1>
+          Crear usuario
+        </h1>
+
+        <form id="submitForm" class="form-signup">
+          <div class="form-group">
+            <label for="inputFirstname">Nombres</label>
+            <input type="text" id="inputFirstname" class="form-control" placeholder="Nombres" required autofocus value="Mauricio">
+          </div>
+          <div class="form-group">
+            <label for="inputLastname">Apellidos</label>
+            <input type="text" id="inputLastname" class="form-control" placeholder="Apellidos" required value="Avellaneda">
+          </div>
+          <div class="form-group">
+            <label for="inputUsername">Usuario</label>
+            <input type="text" id="inputUsername" class="form-control" placeholder="Usuario" required value="mavellaneda">
+          </div>
+          <div class="form-group">
+            <label for="inputEmail">E-mail</label>
+            <input type="text" id="inputEmail" class="form-control" placeholder="E-mail" required value="mavellaneda@gmail.com">
+          </div>
+          <div class="form-group d-flex justify-content-end">
+            <button id="submitButton" class="btn btn-primary" type="submit">Guardar</button>
+            <a class="btn btn-link" href="users.html">Cancelar</a>
+          </div>
+          <script>
+            document.getElementById("submitForm").addEventListener("submit", function (e) {
+              e.preventDefault();
+              alert("El usuario ha sido modificado");
+              window.location.href = "users.html";
+            });
+          </script>
+
       </main>
     </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-  <script>
-    var ctx = document.getElementById("myChart");
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado"],
-        datasets: [{
-          data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-          lineTension: 0,
-          backgroundColor: 'transparent',
-          borderColor: '#007bff',
-          borderWidth: 4,
-          pointBackgroundColor: '#007bff'
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: false
-            }
-          }]
-        },
-        legend: {
-          display: false
-        }
-      }
-    });
-  </script>
 
   <footer>
     <hr />

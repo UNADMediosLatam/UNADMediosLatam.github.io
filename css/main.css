@@ -33,3 +33,7 @@ footer p {
   background: #EEE;
   color: #007bff;
 }
+
+#admin-content {
+  padding: 2rem 0;
+}
