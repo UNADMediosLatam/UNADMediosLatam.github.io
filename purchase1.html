@@ -38,46 +38,44 @@
     </nav>
   </header>
 
-  <main id="content">
-    <form class="form-signin">
-      <h1 class="h3 mb-3 font-weight-normal text-center">Por favor ingrese con su cuenta de usuario</h1>
+  <main id="content" class="container">
+    <h1>Datos del comprador</h1>
+
+    <form id="submitForm" class="form-signup">
       <div class="form-group">
-        <label for="inputUsername" class="sr-only">Usuario</label>
-        <input type="email" id="inputUsername" class="form-control" placeholder="Usuario" required autofocus>
+        <label for="inputFirstname">Nombres</label>
+        <input type="text" id="inputFirstname" class="form-control" placeholder="Nombres" required autofocus>
       </div>
       <div class="form-group">
-        <label for="inputPassword" class="sr-only">Contraseña</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+        <label for="inputLastname">Apellidos</label>
+        <input type="text" id="inputLastname" class="form-control" placeholder="Apellidos" required value="">
       </div>
       <div class="form-group">
-        <label>
-          <input type="checkbox" value="remember-me"> Recordarme
-        </label>
+        <label for="inputEmail">E-mail</label>
+        <input type="text" id="inputEmail" class="form-control" placeholder="E-mail" required value="">
       </div>
-      <button id="submitButton" class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2018 - 2019</p>
+      <div class="form-group d-flex justify-content-end">
+        <button id="submitButton" class="btn btn-primary" type="submit">Continuar con la compra</button>
+        <a class="btn btn-link" href="shoppingcart.html">Regresar</a>
+      </div>
     </form>
     <script>
-      document.getElementById("submitButton").addEventListener("click", function (e) {
+      if (document.cookie === "username=usuario") {
+        document.getElementById("inputFirstname").value = "Mauricio";
+        document.getElementById("inputLastname").value = "Avellaneda";
+        document.getElementById("inputEmail").value = "mavellaneda@gmail.com";
+      } else if (document.cookie === "username=admin") {
+        document.getElementById("inputFirstname").value = "Nilson Albeiro";
+        document.getElementById("inputLastname").value = "Ferreira Manzanares";
+        document.getElementById("inputEmail").value = "nalbeiroferreiram@gmail.com";
+      }
+      document.getElementById("submitForm").addEventListener("submit", function (e) {
         e.preventDefault();
-        var inputUsername = document.getElementById("inputUsername").value;
-        var inputPassword = document.getElementById("inputPassword").value;
-        if (inputUsername === "admin" && inputPassword === "123456") {
-          document.cookie = "username=admin";
-          window.location.href = "admin.html";
-          return true;
-        }
-        if (inputUsername === "usuario" && inputPassword === "123456") {
-          document.cookie = "username=usuario";
-          window.location.href = "purchase1.html";
-          return true;
-        }
-
-        document.getElementById("inputEmail").classList.remove("error");
-        document.getElementById("inputEmail").classList.add("error");
-        alert("Para efectos de este prototipo, intente con admin/123456 o con usuario/123456.");
+        window.location.href = "purchase2.html";
       });
     </script>
+
+
   </main>
 
   <footer>
@@ -89,5 +87,18 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
+  <script>
+    $('#shoppingcart input').change(function () {
+      var ammount = $(this).val();
+      if (ammount < 1) {
+        ammount = 1;
+        $(this).val(1);
+      }
+      var tr = $(this).closest('tr');
+      var price = $('td', tr)[1].innerText.replace('$', '').replace('.', '');
+      var total = parseFloat(price) * parseFloat(ammount);
+      $($('td', tr)[3]).text('$' + total);
+    });
+  </script>
 </body>
 </html>

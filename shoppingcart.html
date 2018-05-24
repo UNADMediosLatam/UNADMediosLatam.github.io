@@ -38,46 +38,42 @@
     </nav>
   </header>
 
-  <main id="content">
-    <form class="form-signin">
-      <h1 class="h3 mb-3 font-weight-normal text-center">Por favor ingrese con su cuenta de usuario</h1>
-      <div class="form-group">
-        <label for="inputUsername" class="sr-only">Usuario</label>
-        <input type="email" id="inputUsername" class="form-control" placeholder="Usuario" required autofocus>
-      </div>
-      <div class="form-group">
-        <label for="inputPassword" class="sr-only">Contraseña</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
-      </div>
-      <div class="form-group">
-        <label>
-          <input type="checkbox" value="remember-me"> Recordarme
-        </label>
-      </div>
-      <button id="submitButton" class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2018 - 2019</p>
-    </form>
-    <script>
-      document.getElementById("submitButton").addEventListener("click", function (e) {
-        e.preventDefault();
-        var inputUsername = document.getElementById("inputUsername").value;
-        var inputPassword = document.getElementById("inputPassword").value;
-        if (inputUsername === "admin" && inputPassword === "123456") {
-          document.cookie = "username=admin";
-          window.location.href = "admin.html";
-          return true;
-        }
-        if (inputUsername === "usuario" && inputPassword === "123456") {
-          document.cookie = "username=usuario";
-          window.location.href = "purchase1.html";
-          return true;
-        }
+  <main id="content" class="container">
+    <h1>Carrito de compras</h1>
 
-        document.getElementById("inputEmail").classList.remove("error");
-        document.getElementById("inputEmail").classList.add("error");
-        alert("Para efectos de este prototipo, intente con admin/123456 o con usuario/123456.");
-      });
-    </script>
+    <div id="shoppingcart" class="table-responsive">
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Celular Huawei P Smart 32Gb 3Ram Octa Core Dual Cam Negro</td>
+            <td>$589.900</td>
+            <td>
+              <input type="number" class="form-control" value="1" />
+            </td>
+            <td>$589.900</td>
+          </tr>
+          <tr>
+            <td>Portatil Asus X441NA-GA109 Celeron N3350 - RAM 4GB - DD 500 GB - 14" Negro + Mouse</td>
+            <td>$659.900</td>
+            <td>
+              <input type="number" class="form-control" value="2" />
+            </td>
+            <td>$1.319.800</td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="purchase1.html" class="btn btn-primary">Comprar</a>
+      <a href="index.html" class="btn btn-link">Continuar comprando</a>
+    </div>
+
   </main>
 
   <footer>
@@ -89,5 +85,18 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
+  <script>
+    $('#shoppingcart input').change(function () {
+      var ammount = $(this).val();
+      if (ammount < 1) {
+        ammount = 1;
+        $(this).val(1);
+      }
+      var tr = $(this).closest('tr');
+      var price = $('td', tr)[1].innerText.replace('$', '').replace('.', '');
+      var total = parseFloat(price) * parseFloat(ammount);
+      $($('td', tr)[3]).text('$' + total);
+    });
+  </script>
 </body>
 </html>
