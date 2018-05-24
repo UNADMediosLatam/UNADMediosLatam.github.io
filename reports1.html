@@ -68,7 +68,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="providers.html">
+              <a class="nav-link" href="products.html">
                 <i class="material-icons">
                   how_to_reg
                 </i>
@@ -97,38 +97,90 @@
 
       <main id="admin-content" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 
+        <div class="d-flex flex-column">
+          <div class="btn-group" id="reports" aria-label="Basic example">
+            <a href="reports.html" class="btn btn-primary">Ventas semana</a>
+            <a href="reports1.html" class="btn btn-primary">Ventas mensuales</a>
+            <a href="reports2.html" class="btn btn-primary">Top de Proveedores</a>
+            <a href="reports3.html" class="btn btn-primary">Top de usuarios</a>
+          </div>
 
-        <h1>
-          Editar usuario
-        </h1>
+          <div id="report">
+            <div class="sheet">
+              <h1>
+                <img alt="Logo" height="40" src="img/logo.svg" width="40">
+                <strong>ELECTRO DIGITAL</strong>
+              </h1>
+              <p class="text-muted">
+                Nilson Albeiro Ferreira Manzanares<br />
+                Representante Legal<br />
+                NIT: 997965465
+                Cra. 83 # 92-12
+              </p>
+              <h3>Ventas mensuales</h3>
+              <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+              <table class="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Celular Huawei P Smart 32Gb 3Ram Octa Core Dual Cam Negro</td>
+                    <td>$589.900</td>
+                    <td>327</td>
+                    <td>$192.603.000</td>
+                  </tr>
+                  <tr>
+                    <td>Portátil HP 15-bs021la Intel Core i7 RAM 12GB DD 1TB Tarjeta de video 2GB Radeon Pantalla de 15.6” - Windows 10 Home</td>
+                    <td>$2.299.900</td>
+                    <td>35</td>
+                    <td>$80.496.500</td>
+                  </tr>
+                  <tr>
+                    <td>Drone DJI Spark (Alpine White) - Blanco</td>
+                    <td>$1.299.000</td>
+                    <td>18</td>
+                    <td>$23.382.000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-        <form id="submitForm" class="form-signup">
-          <div class="form-group">
-            <label for="inputFirstname">Nombres</label>
-            <input type="text" id="inputFirstname" class="form-control" placeholder="Nombres" required autofocus value="Mauricio">
-          </div>
-          <div class="form-group">
-            <label for="inputLastname">Apellidos</label>
-            <input type="text" id="inputLastname" class="form-control" placeholder="Apellidos" required value="Avellaneda">
-          </div>
-          <div class="form-group">
-            <label for="inputUsername">Usuario</label>
-            <input type="text" id="inputUsername" class="form-control" placeholder="Usuario" required value="mavellaneda">
-          </div>
-          <div class="form-group">
-            <label for="inputEmail">E-mail</label>
-            <input type="text" id="inputEmail" class="form-control" placeholder="E-mail" required value="mavellaneda@gmail.com">
-          </div>
-          <div class="form-group d-flex justify-content-end">
-            <button id="submitButton" class="btn btn-primary" type="submit">Guardar</button>
-            <a class="btn btn-link" href="users.html">Cancelar</a>
-          </div>
-        </form>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
         <script>
-          document.getElementById("submitForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            alert("El usuario ha sido modificado");
-            window.location.href = "users.html";
+          var ctx = document.getElementById("myChart");
+          var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: ["Nov-17", "Dic-17", "Ene-18", "Feb-18", "Mar-18", "Abr-18", "May-18"],
+              datasets: [{
+                data: [15339, 21345, 18483, 24003, 23489, 24092, 23034],
+                lineTension: 0,
+                backgroundColor: 'transparent',
+                borderColor: '#007bff',
+                borderWidth: 4,
+                pointBackgroundColor: '#007bff'
+              }]
+            },
+            options: {
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: false
+                  }
+                }]
+              },
+              legend: {
+                display: false
+              }
+            }
           });
         </script>
 

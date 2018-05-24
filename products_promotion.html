@@ -99,36 +99,33 @@
 
 
         <h1>
-          Editar usuario
+          Crear promoción
         </h1>
 
         <form id="submitForm" class="form-signup">
+            <h3>Portátil HP 15-bs021la Intel Core i7 RAM 12GB DD 1TB Tarjeta de video 2GB Radeon Pantalla de 15.6” - Windows 10 Home</h3>
+          <img id="picturePreview" src="img/laptop1.jpg" style="width:100%">
           <div class="form-group">
-            <label for="inputFirstname">Nombres</label>
-            <input type="text" id="inputFirstname" class="form-control" placeholder="Nombres" required autofocus value="Mauricio">
+            <label for="inputContact">Precio promocional</label>
+            <input type="text" id="inputContact" class="form-control" placeholder="Precio" required value="$2.299.900">
           </div>
           <div class="form-group">
-            <label for="inputLastname">Apellidos</label>
-            <input type="text" id="inputLastname" class="form-control" placeholder="Apellidos" required value="Avellaneda">
-          </div>
-          <div class="form-group">
-            <label for="inputUsername">Usuario</label>
-            <input type="text" id="inputUsername" class="form-control" placeholder="Usuario" required value="mavellaneda">
-          </div>
-          <div class="form-group">
-            <label for="inputEmail">E-mail</label>
-            <input type="text" id="inputEmail" class="form-control" placeholder="E-mail" required value="mavellaneda@gmail.com">
+            <h3>Período de la promoción</h3>
+            <label for="inputFrom">Desde</label>
+            <input type="date" id="inputFrom" class="form-control" placeholder="Desde" required value="16%">
+            <label for="inputTo">Hasta</label>
+            <input type="date" id="inputTo" class="form-control" placeholder="Hasta" required value="16%">
           </div>
           <div class="form-group d-flex justify-content-end">
             <button id="submitButton" class="btn btn-primary" type="submit">Guardar</button>
-            <a class="btn btn-link" href="users.html">Cancelar</a>
+            <a class="btn btn-link" href="products.html">Cancelar</a>
           </div>
         </form>
         <script>
           document.getElementById("submitForm").addEventListener("submit", function (e) {
             e.preventDefault();
-            alert("El usuario ha sido modificado");
-            window.location.href = "users.html";
+            alert("La promoción ha sido creada.");
+            window.location.href = "products.html";
           });
         </script>
 

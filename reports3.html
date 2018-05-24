@@ -68,7 +68,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="providers.html">
+              <a class="nav-link" href="products.html">
                 <i class="material-icons">
                   how_to_reg
                 </i>
@@ -97,40 +97,77 @@
 
       <main id="admin-content" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 
+        <div class="d-flex flex-column">
+          <div class="btn-group" id="reports" aria-label="Basic example">
+            <a href="reports.html" class="btn btn-primary">Ventas semana</a>
+            <a href="reports1.html" class="btn btn-primary">Ventas mensuales</a>
+            <a href="reports2.html" class="btn btn-primary">Top de Proveedores</a>
+            <a href="reports3.html" class="btn btn-primary">Top de usuarios</a>
+          </div>
 
-        <h1>
-          Editar usuario
-        </h1>
+          <div id="report">
+            <div class="sheet">
+              <h1>
+                <img alt="Logo" height="40" src="img/logo.svg" width="40">
+                <strong>ELECTRO DIGITAL</strong>
+              </h1>
+              <p class="text-muted">
+                Nilson Albeiro Ferreira Manzanares<br />
+                Representante Legal<br />
+                NIT: 997965465
+                Cra. 83 # 92-12
+              </p>
+              <h3>Top de usuarios</h3>
+              <table class="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th># de Compras</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Mauricio Avellaneda</td>
+                    <td>497</td>
+                    <td>$192.603.000</td>
+                  </tr>
+                  <tr>
+                    <td>Miguel Guaqueta</td>
+                    <td>318</td>
+                    <td>$80.496.500</td>
+                  </tr>
+                  <tr>
+                    <td>Diego Perez</td>
+                    <td>310</td>
+                    <td>$23.382.000</td>
+                  </tr>
+                  <tr>
+                    <td>Santiago Rodriguez</td>
+                    <td>301</td>
+                    <td>$23.382.000</td>
+                  </tr>
+                  <tr>
+                    <td>Cristian Ponce</td>
+                    <td>280</td>
+                    <td>$23.382.000</td>
+                  </tr>
+                  <tr>
+                    <td>Johana Galindo</td>
+                    <td>255</td>
+                    <td>$23.382.000</td>
+                  </tr>
+                  <tr>
+                    <td>Claudia Daza</td>
+                    <td>203</td>
+                    <td>$23.382.000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-        <form id="submitForm" class="form-signup">
-          <div class="form-group">
-            <label for="inputFirstname">Nombres</label>
-            <input type="text" id="inputFirstname" class="form-control" placeholder="Nombres" required autofocus value="Mauricio">
-          </div>
-          <div class="form-group">
-            <label for="inputLastname">Apellidos</label>
-            <input type="text" id="inputLastname" class="form-control" placeholder="Apellidos" required value="Avellaneda">
-          </div>
-          <div class="form-group">
-            <label for="inputUsername">Usuario</label>
-            <input type="text" id="inputUsername" class="form-control" placeholder="Usuario" required value="mavellaneda">
-          </div>
-          <div class="form-group">
-            <label for="inputEmail">E-mail</label>
-            <input type="text" id="inputEmail" class="form-control" placeholder="E-mail" required value="mavellaneda@gmail.com">
-          </div>
-          <div class="form-group d-flex justify-content-end">
-            <button id="submitButton" class="btn btn-primary" type="submit">Guardar</button>
-            <a class="btn btn-link" href="users.html">Cancelar</a>
-          </div>
-        </form>
-        <script>
-          document.getElementById("submitForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            alert("El usuario ha sido modificado");
-            window.location.href = "users.html";
-          });
-        </script>
+        </div>
 
       </main>
     </div>

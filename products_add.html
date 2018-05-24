@@ -68,7 +68,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="providers.html">
+              <a class="nav-link" href="products.html">
                 <i class="material-icons">
                   how_to_reg
                 </i>
@@ -99,36 +99,44 @@
 
 
         <h1>
-          Editar usuario
+          Crear producto
         </h1>
 
         <form id="submitForm" class="form-signup">
           <div class="form-group">
-            <label for="inputFirstname">Nombres</label>
-            <input type="text" id="inputFirstname" class="form-control" placeholder="Nombres" required autofocus value="Mauricio">
+            <label for="inputPicture">Fotografía</label>
+            <input type="file" id="inputPicture" class="form-control" placeholder="Fotografía">
+          </div>
+          <img id="picturePreview" style="width:100%">
+          <div class="form-group">
+            <label for="inputName">Nombre</label>
+            <input type="text" id="inputName" class="form-control" placeholder="Nombre" required autofocus>
           </div>
           <div class="form-group">
-            <label for="inputLastname">Apellidos</label>
-            <input type="text" id="inputLastname" class="form-control" placeholder="Apellidos" required value="Avellaneda">
+            <label for="inputContact">Precio</label>
+            <input type="text" id="inputContact" class="form-control" placeholder="Contacto" required>
           </div>
           <div class="form-group">
-            <label for="inputUsername">Usuario</label>
-            <input type="text" id="inputUsername" class="form-control" placeholder="Usuario" required value="mavellaneda">
+            <label for="inputTelephone">Impuestos</label>
+            <input type="text" id="inputTelephone" class="form-control" placeholder="Teléfono" required>
           </div>
           <div class="form-group">
-            <label for="inputEmail">E-mail</label>
-            <input type="text" id="inputEmail" class="form-control" placeholder="E-mail" required value="mavellaneda@gmail.com">
+            <label for="inputDescription">Descripción</label>
+            <textarea id="inputDescription" class="form-control" required></textarea>
           </div>
           <div class="form-group d-flex justify-content-end">
             <button id="submitButton" class="btn btn-primary" type="submit">Guardar</button>
-            <a class="btn btn-link" href="users.html">Cancelar</a>
+            <a class="btn btn-link" href="products.html">Cancelar</a>
           </div>
         </form>
         <script>
+          document.getElementById("inputPicture").addEventListener("change", function () {
+            document.getElementById("picturePreview").src = "img/laptop1.jpg";
+          });
           document.getElementById("submitForm").addEventListener("submit", function (e) {
             e.preventDefault();
-            alert("El usuario ha sido modificado");
-            window.location.href = "users.html";
+            alert("El producto ha sido creado");
+            window.location.href = "products.html";
           });
         </script>
 

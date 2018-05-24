@@ -99,36 +99,46 @@
 
 
         <h1>
-          Editar usuario
+          Modificar producto
         </h1>
 
         <form id="submitForm" class="form-signup">
           <div class="form-group">
-            <label for="inputFirstname">Nombres</label>
-            <input type="text" id="inputFirstname" class="form-control" placeholder="Nombres" required autofocus value="Mauricio">
+            <label for="inputPicture">Fotografía</label>
+            <input type="file" id="inputPicture" class="form-control" placeholder="Fotografía">
+          </div>
+          <img id="picturePreview" src="img/laptop1.jpg" style="width:100%">
+          <div class="form-group">
+            <label for="inputName">Nombre</label>
+            <input type="text" id="inputName" class="form-control" placeholder="Nombre" required autofocus value="Portátil HP 15-bs021la Intel Core i7 RAM 12GB DD 1TB Tarjeta de video 2GB Radeon Pantalla de 15.6” - Windows 10 Home">
           </div>
           <div class="form-group">
-            <label for="inputLastname">Apellidos</label>
-            <input type="text" id="inputLastname" class="form-control" placeholder="Apellidos" required value="Avellaneda">
+            <label for="inputContact">Precio</label>
+            <input type="text" id="inputContact" class="form-control" placeholder="Precio" required value="$2.299.900">
           </div>
           <div class="form-group">
-            <label for="inputUsername">Usuario</label>
-            <input type="text" id="inputUsername" class="form-control" placeholder="Usuario" required value="mavellaneda">
+            <label for="inputTelephone">Impuestos</label>
+            <input type="text" id="inputTelephone" class="form-control" placeholder="Impuestos" required value="16%">
           </div>
           <div class="form-group">
-            <label for="inputEmail">E-mail</label>
-            <input type="text" id="inputEmail" class="form-control" placeholder="E-mail" required value="mavellaneda@gmail.com">
+            <label for="inputDescription">Descripción</label>
+            <textarea id="inputDescription" class="form-control" required>Esta Portátil HP presenta la combinación perfecta de diseño, confiabilidad y recursos. Estilo y productividad, al tiempo que piensas en tu presupuesto, algo que te encantará.
+
+RENDIMIENTO AL MÁXIMO
+
+Esta moderna Portátil es la indicada. Con un precio accesible y gran cantidad de recursos, no es de extrañar que enamore a todo el mundo, además es de fácil instalación, capaz de brindarte un mundo sin obstáculos, sin complicaciones y atractivo.
+</textarea>
           </div>
           <div class="form-group d-flex justify-content-end">
             <button id="submitButton" class="btn btn-primary" type="submit">Guardar</button>
-            <a class="btn btn-link" href="users.html">Cancelar</a>
+            <a class="btn btn-link" href="products.html">Cancelar</a>
           </div>
         </form>
         <script>
           document.getElementById("submitForm").addEventListener("submit", function (e) {
             e.preventDefault();
-            alert("El usuario ha sido modificado");
-            window.location.href = "users.html";
+            alert("El producto ha sido modificado");
+            window.location.href = "products.html";
           });
         </script>
 

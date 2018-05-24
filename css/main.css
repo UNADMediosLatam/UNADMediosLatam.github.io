@@ -37,3 +37,26 @@ footer p {
 #admin-content {
   padding: 2rem 0;
 }
+
+#reports {
+  margin-bottom: 1rem;
+}
+
+#report {
+  border: 1px inset #ccc;
+  background: #666;
+  padding: 1rem;
+  overflow: auto;
+  height: 500px;
+}
+
+#report .sheet {
+  border: 1px solid #000;
+  background: #fff;
+  box-shadow: 0 0 10px #000;
+  width: 220mm;
+  height: 280mm;
+  margin: 0 auto;
+  padding: 2cm;
+  overflow: hidden;
+}
